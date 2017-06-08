@@ -1,4 +1,4 @@
-package com.jfree.common.dlock;
+package online.jfree.common.dlock;
 
 import org.junit.Test;
 

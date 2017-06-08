@@ -1,4 +1,4 @@
-package com.jfree.common.dlock;
+package online.jfree.common.dlock;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
