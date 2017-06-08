@@ -8,6 +8,33 @@
     <artifactId>common-dlock</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
+    <name>common-dlock</name>
+    <description>
+        This is a redis implementation of the distributed lock component
+    </description>
+    <url>https://github.com/laohuaishu/common-dlock</url>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>free</name>
+            <email>2634113451@.qq.com</email>
+            <url>http://www.cnblogs.com/darkwind/</url>
+            <timezone>+8</timezone>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git@github.com:laohuaishu/common-dlock.git</connection>
+        <developerConnection>scm:git:git@github.com:laohuaishu/common-dlock.git</developerConnection>
+        <url>https://github.com/laohuaishu/common-dlock.git</url>
+    </scm>
 
     <dependencies>
         <!-- jedisclient -->
