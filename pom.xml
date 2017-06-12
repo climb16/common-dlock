@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>online.jfree</groupId>
+    <groupId>com.github.laohuaishu</groupId>
     <artifactId>common-dlock</artifactId>
     <version>2.0.0</version>
     <packaging>jar</packaging>
@@ -16,8 +16,8 @@
 
     <licenses>
         <license>
-            <name>The Apache Software License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <name>MIT License</name>
+            <url>https://mit-license.org</url>
         </license>
     </licenses>
 
@@ -31,10 +31,19 @@
     </developers>
 
     <scm>
-        <connection>scm:git:git@github.com:laohuaishu/common-dlock.git</connection>
-        <developerConnection>scm:git:git@github.com:laohuaishu/common-dlock.git</developerConnection>
-        <url>https://github.com/laohuaishu/common-dlock.git</url>
+        <connection>scm:git:https://github.com/laohuaishu/common-dlock.git</connection>
+        <developerConnection>scm:git@github.com:laohuaishu/common-dlock.git</developerConnection>
+        <url>https://github.com/laohuaishu/common-dlock</url>
+        <tag>2.0.0</tag>
     </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>oss</id>
+            <name>release</name>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+        </repository>
+    </distributionManagement>
 
     <dependencies>
         <!-- jedisclient -->
@@ -42,6 +51,12 @@
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
             <version>2.8.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.commons</groupId>
+                    <artifactId>commons-pool2</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <!-- log -->
@@ -56,6 +71,26 @@
             <artifactId>junit</artifactId>
             <version>4.12</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+            <version>3.4.10</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>jline</groupId>
+                    <artifactId>jline</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>log4j</groupId>
+                    <artifactId>log4j</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
     </dependencies>
 
     <build>
@@ -68,6 +103,12 @@
                     <source>1.7</source>
                     <target>1.7</target>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.8.2</version>
             </plugin>
         </plugins>
     </build>
