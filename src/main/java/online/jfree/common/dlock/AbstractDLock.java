@@ -1,5 +1,8 @@
 package online.jfree.common.dlock;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -9,6 +12,8 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 
 public abstract class AbstractDLock implements DLock {
+
+    protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
     private static Map<Integer, Lock> locks = new ConcurrentHashMap<>();
 

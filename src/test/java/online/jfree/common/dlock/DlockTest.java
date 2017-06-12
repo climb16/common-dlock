@@ -17,6 +17,7 @@ public class DlockTest {
 
         dLock.lock("aa", "aa");
 
+       // dLock.unlock();
 
         /*new Thread(new Runnable() {
             @Override
