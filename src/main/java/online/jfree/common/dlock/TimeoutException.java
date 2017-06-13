@@ -3,7 +3,7 @@ package online.jfree.common.dlock;
 /**
  * @author xiao
  * @version 1.0.0
- * @datetime 2016-10-29 17:58
+ * datetime 2016-10-29 17:58
  */
 public class TimeoutException extends DLockException {
 

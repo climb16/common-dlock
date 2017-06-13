@@ -24,10 +24,10 @@ public interface DLock {
 
     /**
      * 尝试获取锁, 若获取不到则会一直阻塞，在 timeout时间内还没获取到，则抛出timeout异常
-     * @param key
-     * @param holder
-     * @param timeout
-     * @throws TimeoutException
+     * @param key  锁id
+     * @param holder  锁持有者
+     * @param timeout 超时时间
+     * @throws TimeoutException timeout时间内仍未获取锁抛出 TimeoutException
      */
     void lock(String key, String holder, long timeout) throws TimeoutException;
 
